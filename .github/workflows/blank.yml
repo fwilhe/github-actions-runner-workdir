@@ -30,7 +30,7 @@ jobs:
 
       - name: mkdir
         run:  mkdir {{matrix.foo}}
-        working-directory: $RUNNER_TEMP
+        working-directory: ${RUNNER_TEMP}
       - name: cd
         run: pwd
-        working-directory: $RUNNER_TEMP/{{matrix.foo}}
+        working-directory: ${RUNNER_TEMP}/{{matrix.foo}}
