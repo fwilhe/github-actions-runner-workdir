@@ -29,8 +29,6 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: mkdir
-        run:  mkdir {{matrix.foo}}
-        working-directory: ${RUNNER_TEMP}
+        run:  cd $RUNNER_TEMP; mkdir {{matrix.foo}}
       - name: cd
-        run: pwd
-        working-directory: ${RUNNER_TEMP}/{{matrix.foo}}
+        run: cd $RUNNER_TEMP/{{matrix.foo}}; pwd
