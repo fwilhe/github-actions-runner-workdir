@@ -13,12 +13,17 @@ jobs:
       image: node:18
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
       - name: Print pwd
         run: pwd
       - name: Print GITHUB_WORKSPACE
         run: echo ${GITHUB_WORKSPACE}
       - name: Are they equal?
         run: '[[ "$(pwd)" == "${GITHUB_WORKSPACE}" ]]'
+        shell: bash
 
   build2:
     runs-on: ubuntu-latest
