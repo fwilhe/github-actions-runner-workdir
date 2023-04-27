@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: 
+      image: fwilhe2/act-runner:latest
     steps:
       - uses: actions/checkout@v3
       - name: Print pwd
@@ -20,6 +22,8 @@ jobs:
 
   build2:
     runs-on: ubuntu-latest
+    container: 
+      image: fwilhe2/act-runner:latest
     strategy:
       fail-fast: false
       matrix:
