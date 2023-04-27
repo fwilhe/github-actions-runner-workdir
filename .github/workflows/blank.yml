@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: 
-      image: fwilhe2/act-runner:latest
+      image: node:18
     steps:
       - uses: actions/checkout@v3
       - name: Print pwd
@@ -23,7 +23,7 @@ jobs:
   build2:
     runs-on: ubuntu-latest
     container: 
-      image: fwilhe2/act-runner:latest
+      image: node:18
     strategy:
       fail-fast: false
       matrix:
